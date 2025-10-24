@@ -1,0 +1,18 @@
+network: sepolia
+rpcUrl: YOUR_RPC
+relayUrl: https://relay.flashbots.net
+executorAddress: YOUR_EXECUTOR_ADDRESS
+minNetProfitWei: 2000000000000000
+maxSlippageBps: 30
+deadlineSeconds: 20
+scanIntervalMs: 800
+maxGasWei: 120000000000
+minLiquidityUsd: 20000
+dexes:
+  - uniswapv3
+  - uniswapv2
+  - sushi
+  - curve
+flashLoan:
+  provider: aaveV3
+  feeBps: 9

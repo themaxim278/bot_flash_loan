@@ -1,0 +1,17 @@
+network: mainnet
+rpcUrl: YOUR_RPC
+relayUrl: YOUR_RELAY
+minNetProfitWei: 5000000000000000
+maxSlippageBps: 30
+deadlineSeconds: 15
+scanIntervalMs: 600
+maxGasWei: 200000000000
+minLiquidityUsd: 50000
+dexes:
+  - uniswapv3
+  - uniswapv2
+  - sushi
+  - curve
+flashLoan:
+  provider: aaveV3
+  feeBps: 9

@@ -1,0 +1,18 @@
+network: local
+rpcUrl: http://127.0.0.1:8545
+relayUrl: http://localhost:9000
+minNetProfitWei: 1000000000000
+maxSlippageBps: 50
+deadlineSeconds: 30
+scanIntervalMs: 1000
+maxGasWei: 200000000000
+minLiquidityUsd: 10000
+mevBufferBps: 5
+notionalUsdDefault: 15000
+dexes:
+  - uniswapv2
+  - uniswapv3
+  - sushi
+flashLoan:
+  provider: aaveV3
+  feeBps: 9

@@ -1,0 +1,42 @@
+{
+  "name": "flash-loan-arb-bot-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo per bot di arbitraggio DeFi con flash-loan (Step 0)",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "commonjs",
+  "workspaces": [
+    "bot",
+    "contracts",
+    "frontend",
+    "scripts"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run -ws build --if-present",
+    "dev": "npm run -ws dev --if-present",
+    "ci": "npm run -w contracts test && npm run -w bot test",
+    "bot:discover": "npm run -w bot discover",
+    "bot:evaluate": "npm run -w bot evaluate",
+    "bot:simulate": "npm run -w bot simulate",
+    "bot:execute": "npm run -w bot execute",
+    "ts-node": "ts-node --esm",
+    "slither": "npm run -w contracts slither",
+    "mythril": "npm run -w contracts mythril"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
