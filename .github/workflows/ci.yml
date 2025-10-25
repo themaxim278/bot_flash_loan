@@ -20,7 +20,9 @@ jobs:
         run: npm ci
 
       - name: Lint & Typecheck
-        run: npm run lint && npm run typecheck || true
+        run: |
+          npm run lint --if-present || true
+          npm run typecheck --if-present || true
 
       - name: Build all workspaces
         run: npm run build --workspaces
