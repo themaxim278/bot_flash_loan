@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -64,8 +69,12 @@ jobs:
           node-version: 20
       - run: npm ci -w frontend
       - run: npm run build -w frontend
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy frontend to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: frontend/dist
+          publish_dir: ./frontend/dist
           publish_branch: gh-pages
+          force_orphan: true
+          user_name: github-actions
+          user_email: github-actions@github.com
